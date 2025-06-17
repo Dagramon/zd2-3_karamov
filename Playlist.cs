@@ -63,11 +63,11 @@ namespace zd2_3_karamov
             list.Add(song);
             currentIndex = list.IndexOf(song);
         }
-        public void AddSong(string title) //2 перегрузка добавления новой песни
+        public void AddSong(string title, string filename) //2 перегрузка добавления новой песни
         {
             Song song = new Song();
             song.Title = title;
-            song.Filename = "unknown.mp3";
+            song.Filename = filename;
             song.Author = "Неизвестно";
             list.Add(song);
             currentIndex = list.IndexOf(song);

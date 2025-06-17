@@ -141,9 +141,9 @@ namespace zd2_3_karamov
 
         private void button8_Click(object sender, EventArgs e) //Добавление новой песни
         {
-            if (textBoxName.Text != string.Empty)
+            if (textBoxName.Text != string.Empty && textBoxFilename.Text != string.Empty)
             {
-                if (textBoxFilename.Text != string.Empty && textBoxAuthor.Text != string.Empty)
+                if (textBoxAuthor.Text != string.Empty)
                 {
                     if (!listBoxSongs.Items.Contains(textBoxName.Text))
                     {
@@ -160,7 +160,7 @@ namespace zd2_3_karamov
                 {
                     if (!listBoxSongs.Items.Contains(textBoxName.Text))
                     {
-                        playlist.AddSong(textBoxName.Text);
+                        playlist.AddSong(textBoxName.Text, textBoxFilename.Text);
                         LoadSong();
                         UpdatePlaylist();
                     }
