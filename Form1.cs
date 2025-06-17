@@ -141,17 +141,33 @@ namespace zd2_3_karamov
 
         private void button8_Click(object sender, EventArgs e) //Добавление новой песни
         {
-            if (textBoxName.Text != string.Empty && textBoxFilename.Text != string.Empty && textBoxAuthor.Text != string.Empty)
+            if (textBoxName.Text != string.Empty)
             {
-                if (!listBoxSongs.Items.Contains(textBoxName.Text))
+                if (textBoxFilename.Text != string.Empty && textBoxAuthor.Text != string.Empty)
                 {
-                    playlist.AddSong(textBoxName.Text, textBoxFilename.Text, textBoxAuthor.Text);
-                    LoadSong();
-                    UpdatePlaylist();
+                    if (!listBoxSongs.Items.Contains(textBoxName.Text))
+                    {
+                        playlist.AddSong(textBoxName.Text, textBoxFilename.Text, textBoxAuthor.Text);
+                        LoadSong();
+                        UpdatePlaylist();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Песня уже существует");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Песня уже существует");
+                    if (!listBoxSongs.Items.Contains(textBoxName.Text))
+                    {
+                        playlist.AddSong(textBoxName.Text);
+                        LoadSong();
+                        UpdatePlaylist();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Песня уже существует");
+                    }
                 }
             }
         }
@@ -200,6 +216,19 @@ namespace zd2_3_karamov
             playlist.CurrentIndex = 0;
             LoadSong();
             UpdatePlaylist();
+        }
+
+        private void SongRemoveByNameButton_Click(object sender, EventArgs e)
+        {
+            if (SongNameToDelete.Text != string.Empty && listBoxSongs.Items.Contains(SongNameToDelete.Text))
+            {
+                playlist.RemoveSong(SongNameToDelete.Text);
+                UpdatePlaylist();
+            }
+            else
+            {
+                MessageBox.Show("Песня не найдена");
+            }
         }
     }
 }

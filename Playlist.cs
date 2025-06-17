@@ -63,6 +63,15 @@ namespace zd2_3_karamov
             list.Add(song);
             currentIndex = list.IndexOf(song);
         }
+        public void AddSong(string title) //2 перегрузка добавления новой песни
+        {
+            Song song = new Song();
+            song.Title = title;
+            song.Filename = "unknown.mp3";
+            song.Author = "Неизвестно";
+            list.Add(song);
+            currentIndex = list.IndexOf(song);
+        }
         public void RemoveSong(int index) //удаление песни по индексу
         {
             if (list.Count > 0)
@@ -76,6 +85,20 @@ namespace zd2_3_karamov
             if (list.Count > 0)
             {
                 list.Remove(song);
+                currentIndex = 0;
+            }
+        }
+        public void RemoveSong(string name) //2 перегрузка удаления песни
+        {
+            if (list.Count > 0)
+            {
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (list[i].Title == name)
+                    {
+                        list.Remove(list[i]);
+                    }
+                }
                 currentIndex = 0;
             }
         }

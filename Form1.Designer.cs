@@ -74,6 +74,8 @@ namespace zd2_3_karamov
             this.label8 = new System.Windows.Forms.Label();
             this.listBoxSongs = new System.Windows.Forms.ListBox();
             this.SongNameLabel = new System.Windows.Forms.Label();
+            this.SongNameToDelete = new System.Windows.Forms.TextBox();
+            this.SongRemoveByNameButton = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -313,6 +315,8 @@ namespace zd2_3_karamov
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.SongRemoveByNameButton);
+            this.panel2.Controls.Add(this.SongNameToDelete);
             this.panel2.Controls.Add(this.MoveToStartButton);
             this.panel2.Controls.Add(this.FileLabel);
             this.panel2.Controls.Add(this.RemoveCurrentSongButton);
@@ -545,6 +549,24 @@ namespace zd2_3_karamov
             this.SongNameLabel.TabIndex = 0;
             this.SongNameLabel.Text = "Название песни";
             // 
+            // SongNameToDelete
+            // 
+            this.SongNameToDelete.Location = new System.Drawing.Point(527, 387);
+            this.SongNameToDelete.Name = "SongNameToDelete";
+            this.SongNameToDelete.PlaceholderText = "Название песни для удаления";
+            this.SongNameToDelete.Size = new System.Drawing.Size(173, 23);
+            this.SongNameToDelete.TabIndex = 26;
+            // 
+            // SongRemoveByNameButton
+            // 
+            this.SongRemoveByNameButton.Location = new System.Drawing.Point(585, 416);
+            this.SongRemoveByNameButton.Name = "SongRemoveByNameButton";
+            this.SongRemoveByNameButton.Size = new System.Drawing.Size(75, 23);
+            this.SongRemoveByNameButton.TabIndex = 27;
+            this.SongRemoveByNameButton.Text = "Удалить";
+            this.SongRemoveByNameButton.UseVisualStyleBackColor = true;
+            this.SongRemoveByNameButton.Click += new System.EventHandler(this.SongRemoveByNameButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -613,6 +635,8 @@ namespace zd2_3_karamov
         private System.Windows.Forms.Button RemoveCurrentSongButton;
         private System.Windows.Forms.Label FileLabel;
         private System.Windows.Forms.Button MoveToStartButton;
+        private System.Windows.Forms.Button SongRemoveByNameButton;
+        private System.Windows.Forms.TextBox SongNameToDelete;
     }
 }
 
