@@ -18,6 +18,7 @@ namespace zd2_3_karamov
         }
 
         List<Shop> shops = new List<Shop>();
+        Playlist playlist = new Playlist();
 
         private void UpdateListBox() //Обновление значений в ListBox по выбранному магазину
         {
@@ -92,6 +93,113 @@ namespace zd2_3_karamov
             {
                 MessageBox.Show(shops[comboBox1.SelectedIndex].ShopProfit());
             }
+        }
+        //задание 3
+
+        public void UpdatePlaylist()
+        {
+            listBox2.Items.Clear();
+            numericIndex.Maximum = playlist.GetList().Count - 1;
+            numericIndex.Minimum = 0;
+            foreach (Song song in playlist.GetList())
+            {
+                listBox2.Items.Add(song.Title);
+            }
+            if (listBox2.Items.Count > 0)
+            {
+                listBox2.SelectedIndex = playlist.CurrentIndex;
+            }
+        }
+
+        public void LoadSong()
+        {
+            Song currentSong = playlist.CurrentSong();
+            label7.Text = currentSong.Title;
+            label13.Text = currentSong.Author;
+            label9.Text = currentSong.Filename;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (comboBox2.Text != string.Empty)
+            {
+                string name = comboBox2.Text.Substring(0, comboBox2.Text.IndexOf('|'));
+                string filename = comboBox2.Text.Substring(comboBox2.Text.IndexOf('|') + 1, comboBox2.Text.LastIndexOf('|') - comboBox2.Text.IndexOf('|') - 1);
+                string author = comboBox2.Text.Substring(comboBox2.Text.LastIndexOf('|') + 1, comboBox2.Text.Length - comboBox2.Text.LastIndexOf('|') - 1);
+                if (!listBox2.Items.Contains(name))
+                {
+                    Song song = new Song();
+                    song.Title = name;
+                    song.Filename = filename;
+                    song.Author = author;
+                    playlist.AddSong(song);
+                    LoadSong();
+                    UpdatePlaylist();
+                }
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (textBox3.Text != string.Empty && textBox4.Text != string.Empty && textBox5.Text != string.Empty)
+            {
+                if (!listBox2.Items.Contains(textBox3.Text))
+                {
+                    playlist.AddSong(textBox3.Text, textBox4.Text, textBox5.Text);
+                    LoadSong();
+                    UpdatePlaylist();
+                }
+                else
+                {
+                    MessageBox.Show("Песня уже существует");
+                }
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            playlist.ClearPlaylist();
+            UpdatePlaylist();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            playlist.MoveToPrevious();
+            LoadSong();
+            UpdatePlaylist();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            playlist.MoveToNext();
+            LoadSong();
+            UpdatePlaylist();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            playlist.CurrentIndex = (Convert.ToInt16(numericIndex.Value));
+            LoadSong();
+            UpdatePlaylist();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            playlist.RemoveSong(Convert.ToInt16(numericIndex.Value));
+            UpdatePlaylist();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            playlist.RemoveSong(playlist.CurrentSong());
+            UpdatePlaylist();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            playlist.CurrentIndex = 0;
+            LoadSong();
+            UpdatePlaylist();
         }
     }
 }

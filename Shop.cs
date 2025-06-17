@@ -45,6 +45,10 @@ namespace zd2_3_karamov
         {
             products.Add(new Product(name, price), count);
         }
+        public void RemoveProduct(Product product) //Удаление продукта
+        {
+            products.Remove(product);
+        }
 
         public string WriteAllProducts() //Вывод всех продуктов
         {
@@ -77,6 +81,7 @@ namespace zd2_3_karamov
                 if (products[product] == 0)
                 {
                     info = "Нет в наличии!";
+                    RemoveProduct(product);
                 }
                 else
                 {
