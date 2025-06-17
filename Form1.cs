@@ -96,37 +96,37 @@ namespace zd2_3_karamov
         }
         //задание 3
 
-        public void UpdatePlaylist()
+        public void UpdatePlaylist() //Добавление изменений в listBox
         {
-            listBox2.Items.Clear();
+            listBoxSongs.Items.Clear();
             numericIndex.Maximum = playlist.GetList().Count - 1;
             numericIndex.Minimum = 0;
             foreach (Song song in playlist.GetList())
             {
-                listBox2.Items.Add(song.Title);
+                listBoxSongs.Items.Add(song.Title);
             }
-            if (listBox2.Items.Count > 0)
+            if (listBoxSongs.Items.Count > 0)
             {
-                listBox2.SelectedIndex = playlist.CurrentIndex;
+                listBoxSongs.SelectedIndex = playlist.CurrentIndex;
             }
         }
 
-        public void LoadSong()
+        public void LoadSong() //Загрузка песни для отображения
         {
             Song currentSong = playlist.CurrentSong();
-            label7.Text = currentSong.Title;
-            label13.Text = currentSong.Author;
-            label9.Text = currentSong.Filename;
+            SongNameLabel.Text = currentSong.Title;
+            AuthorLabel.Text = currentSong.Author;
+            FileLabel.Text = currentSong.Filename;
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e) //Добавление существующей песни
         {
-            if (comboBox2.Text != string.Empty)
+            if (comboBoxSongs.Text != string.Empty)
             {
-                string name = comboBox2.Text.Substring(0, comboBox2.Text.IndexOf('|'));
-                string filename = comboBox2.Text.Substring(comboBox2.Text.IndexOf('|') + 1, comboBox2.Text.LastIndexOf('|') - comboBox2.Text.IndexOf('|') - 1);
-                string author = comboBox2.Text.Substring(comboBox2.Text.LastIndexOf('|') + 1, comboBox2.Text.Length - comboBox2.Text.LastIndexOf('|') - 1);
-                if (!listBox2.Items.Contains(name))
+                string name = comboBoxSongs.Text.Substring(0, comboBoxSongs.Text.IndexOf('|'));
+                string filename = comboBoxSongs.Text.Substring(comboBoxSongs.Text.IndexOf('|') + 1, comboBoxSongs.Text.LastIndexOf('|') - comboBoxSongs.Text.IndexOf('|') - 1);
+                string author = comboBoxSongs.Text.Substring(comboBoxSongs.Text.LastIndexOf('|') + 1, comboBoxSongs.Text.Length - comboBoxSongs.Text.LastIndexOf('|') - 1);
+                if (!listBoxSongs.Items.Contains(name))
                 {
                     Song song = new Song();
                     song.Title = name;
@@ -139,13 +139,13 @@ namespace zd2_3_karamov
             }
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e) //Добавление новой песни
         {
-            if (textBox3.Text != string.Empty && textBox4.Text != string.Empty && textBox5.Text != string.Empty)
+            if (textBoxName.Text != string.Empty && textBoxFilename.Text != string.Empty && textBoxAuthor.Text != string.Empty)
             {
-                if (!listBox2.Items.Contains(textBox3.Text))
+                if (!listBoxSongs.Items.Contains(textBoxName.Text))
                 {
-                    playlist.AddSong(textBox3.Text, textBox4.Text, textBox5.Text);
+                    playlist.AddSong(textBoxName.Text, textBoxFilename.Text, textBoxAuthor.Text);
                     LoadSong();
                     UpdatePlaylist();
                 }
@@ -156,46 +156,46 @@ namespace zd2_3_karamov
             }
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void button12_Click(object sender, EventArgs e) //Очистка плейлиста
         {
             playlist.ClearPlaylist();
             UpdatePlaylist();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //Перемещение назад по плейлисту
         {
             playlist.MoveToPrevious();
             LoadSong();
             UpdatePlaylist();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e) //Перемещение вперёд по плейлисту
         {
             playlist.MoveToNext();
             LoadSong();
             UpdatePlaylist();
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void button10_Click(object sender, EventArgs e) //Перемещение по индексу
         {
             playlist.CurrentIndex = (Convert.ToInt16(numericIndex.Value));
             LoadSong();
             UpdatePlaylist();
         }
 
-        private void button11_Click(object sender, EventArgs e)
+        private void button11_Click(object sender, EventArgs e) //Удаление по индексу
         {
             playlist.RemoveSong(Convert.ToInt16(numericIndex.Value));
             UpdatePlaylist();
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void button13_Click(object sender, EventArgs e) //Удаление текущей песни
         {
             playlist.RemoveSong(playlist.CurrentSong());
             UpdatePlaylist();
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void button14_Click(object sender, EventArgs e) //Перемещение в начало плейлиста
         {
             playlist.CurrentIndex = 0;
             LoadSong();

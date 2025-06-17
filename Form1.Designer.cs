@@ -52,28 +52,28 @@ namespace zd2_3_karamov
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button14 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button13 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.MoveToStartButton = new System.Windows.Forms.Button();
+            this.FileLabel = new System.Windows.Forms.Label();
+            this.RemoveCurrentSongButton = new System.Windows.Forms.Button();
+            this.textBoxAuthor = new System.Windows.Forms.TextBox();
+            this.textBoxFilename = new System.Windows.Forms.TextBox();
+            this.AuthorLabel = new System.Windows.Forms.Label();
+            this.ClearPlaylistButton = new System.Windows.Forms.Button();
+            this.RemoveSongButton = new System.Windows.Forms.Button();
+            this.SelectSongButton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.numericIndex = new System.Windows.Forms.NumericUpDown();
-            this.button9 = new System.Windows.Forms.Button();
+            this.AddExistingSongButton = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.comboBoxSongs = new System.Windows.Forms.ComboBox();
+            this.AddNewSongButton = new System.Windows.Forms.Button();
+            this.NextButton = new System.Windows.Forms.Button();
+            this.PreviousButton = new System.Windows.Forms.Button();
+            this.Picture = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.listBoxSongs = new System.Windows.Forms.ListBox();
+            this.SongNameLabel = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -313,117 +313,117 @@ namespace zd2_3_karamov
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button14);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.button13);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.button12);
-            this.panel2.Controls.Add(this.button11);
-            this.panel2.Controls.Add(this.button10);
+            this.panel2.Controls.Add(this.MoveToStartButton);
+            this.panel2.Controls.Add(this.FileLabel);
+            this.panel2.Controls.Add(this.RemoveCurrentSongButton);
+            this.panel2.Controls.Add(this.textBoxAuthor);
+            this.panel2.Controls.Add(this.textBoxFilename);
+            this.panel2.Controls.Add(this.AuthorLabel);
+            this.panel2.Controls.Add(this.ClearPlaylistButton);
+            this.panel2.Controls.Add(this.RemoveSongButton);
+            this.panel2.Controls.Add(this.SelectSongButton);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.numericIndex);
-            this.panel2.Controls.Add(this.button9);
+            this.panel2.Controls.Add(this.AddExistingSongButton);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.textBoxName);
+            this.panel2.Controls.Add(this.comboBoxSongs);
+            this.panel2.Controls.Add(this.AddNewSongButton);
+            this.panel2.Controls.Add(this.NextButton);
+            this.panel2.Controls.Add(this.PreviousButton);
+            this.panel2.Controls.Add(this.Picture);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.listBox2);
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.listBoxSongs);
+            this.panel2.Controls.Add(this.SongNameLabel);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(733, 444);
             this.panel2.TabIndex = 3;
             this.panel2.Visible = false;
             // 
-            // button14
+            // MoveToStartButton
             // 
-            this.button14.Location = new System.Drawing.Point(243, 386);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(130, 41);
-            this.button14.TabIndex = 25;
-            this.button14.Text = "Перейти в начало плейлиста";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.MoveToStartButton.Location = new System.Drawing.Point(243, 386);
+            this.MoveToStartButton.Name = "MoveToStartButton";
+            this.MoveToStartButton.Size = new System.Drawing.Size(130, 41);
+            this.MoveToStartButton.TabIndex = 25;
+            this.MoveToStartButton.Text = "Перейти в начало плейлиста";
+            this.MoveToStartButton.UseVisualStyleBackColor = true;
+            this.MoveToStartButton.Click += new System.EventHandler(this.button14_Click);
             // 
-            // label9
+            // FileLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(511, 76);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 15);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Файл";
+            this.FileLabel.AutoSize = true;
+            this.FileLabel.Location = new System.Drawing.Point(511, 76);
+            this.FileLabel.Name = "FileLabel";
+            this.FileLabel.Size = new System.Drawing.Size(36, 15);
+            this.FileLabel.TabIndex = 24;
+            this.FileLabel.Text = "Файл";
             // 
-            // button13
+            // RemoveCurrentSongButton
             // 
-            this.button13.Location = new System.Drawing.Point(243, 331);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(130, 47);
-            this.button13.TabIndex = 23;
-            this.button13.Text = "Удалить текущую песню";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.RemoveCurrentSongButton.Location = new System.Drawing.Point(243, 331);
+            this.RemoveCurrentSongButton.Name = "RemoveCurrentSongButton";
+            this.RemoveCurrentSongButton.Size = new System.Drawing.Size(130, 47);
+            this.RemoveCurrentSongButton.TabIndex = 23;
+            this.RemoveCurrentSongButton.Text = "Удалить текущую песню";
+            this.RemoveCurrentSongButton.UseVisualStyleBackColor = true;
+            this.RemoveCurrentSongButton.Click += new System.EventHandler(this.button13_Click);
             // 
-            // textBox5
+            // textBoxAuthor
             // 
-            this.textBox5.Location = new System.Drawing.Point(243, 212);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PlaceholderText = "Автор";
-            this.textBox5.Size = new System.Drawing.Size(131, 23);
-            this.textBox5.TabIndex = 22;
+            this.textBoxAuthor.Location = new System.Drawing.Point(243, 212);
+            this.textBoxAuthor.Name = "textBoxAuthor";
+            this.textBoxAuthor.PlaceholderText = "Автор";
+            this.textBoxAuthor.Size = new System.Drawing.Size(131, 23);
+            this.textBoxAuthor.TabIndex = 22;
             // 
-            // textBox4
+            // textBoxFilename
             // 
-            this.textBox4.Location = new System.Drawing.Point(243, 183);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PlaceholderText = "Имя файла";
-            this.textBox4.Size = new System.Drawing.Size(131, 23);
-            this.textBox4.TabIndex = 21;
+            this.textBoxFilename.Location = new System.Drawing.Point(243, 183);
+            this.textBoxFilename.Name = "textBoxFilename";
+            this.textBoxFilename.PlaceholderText = "Имя файла";
+            this.textBoxFilename.Size = new System.Drawing.Size(131, 23);
+            this.textBoxFilename.TabIndex = 21;
             // 
-            // label13
+            // AuthorLabel
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(509, 59);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(40, 15);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "Автор";
+            this.AuthorLabel.AutoSize = true;
+            this.AuthorLabel.Location = new System.Drawing.Point(509, 59);
+            this.AuthorLabel.Name = "AuthorLabel";
+            this.AuthorLabel.Size = new System.Drawing.Size(40, 15);
+            this.AuthorLabel.TabIndex = 20;
+            this.AuthorLabel.Text = "Автор";
             // 
-            // button12
+            // ClearPlaylistButton
             // 
-            this.button12.Location = new System.Drawing.Point(243, 302);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(130, 23);
-            this.button12.TabIndex = 19;
-            this.button12.Text = "Очистить плейлист";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.ClearPlaylistButton.Location = new System.Drawing.Point(243, 302);
+            this.ClearPlaylistButton.Name = "ClearPlaylistButton";
+            this.ClearPlaylistButton.Size = new System.Drawing.Size(130, 23);
+            this.ClearPlaylistButton.TabIndex = 19;
+            this.ClearPlaylistButton.Text = "Очистить плейлист";
+            this.ClearPlaylistButton.UseVisualStyleBackColor = true;
+            this.ClearPlaylistButton.Click += new System.EventHandler(this.button12_Click);
             // 
-            // button11
+            // RemoveSongButton
             // 
-            this.button11.Location = new System.Drawing.Point(562, 355);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 18;
-            this.button11.Text = "Удалить";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.RemoveSongButton.Location = new System.Drawing.Point(562, 355);
+            this.RemoveSongButton.Name = "RemoveSongButton";
+            this.RemoveSongButton.Size = new System.Drawing.Size(75, 23);
+            this.RemoveSongButton.TabIndex = 18;
+            this.RemoveSongButton.Text = "Удалить";
+            this.RemoveSongButton.UseVisualStyleBackColor = true;
+            this.RemoveSongButton.Click += new System.EventHandler(this.button11_Click);
             // 
-            // button10
+            // SelectSongButton
             // 
-            this.button10.Location = new System.Drawing.Point(451, 355);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 17;
-            this.button10.Text = "Выбрать";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.SelectSongButton.Location = new System.Drawing.Point(451, 355);
+            this.SelectSongButton.Name = "SelectSongButton";
+            this.SelectSongButton.Size = new System.Drawing.Size(75, 23);
+            this.SelectSongButton.TabIndex = 17;
+            this.SelectSongButton.Text = "Выбрать";
+            this.SelectSongButton.UseVisualStyleBackColor = true;
+            this.SelectSongButton.Click += new System.EventHandler(this.button10_Click);
             // 
             // label12
             // 
@@ -441,15 +441,15 @@ namespace zd2_3_karamov
             this.numericIndex.Size = new System.Drawing.Size(120, 23);
             this.numericIndex.TabIndex = 15;
             // 
-            // button9
+            // AddExistingSongButton
             // 
-            this.button9.Location = new System.Drawing.Point(265, 92);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(84, 23);
-            this.button9.TabIndex = 14;
-            this.button9.Text = "Добавить";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.AddExistingSongButton.Location = new System.Drawing.Point(265, 92);
+            this.AddExistingSongButton.Name = "AddExistingSongButton";
+            this.AddExistingSongButton.Size = new System.Drawing.Size(84, 23);
+            this.AddExistingSongButton.TabIndex = 14;
+            this.AddExistingSongButton.Text = "Добавить";
+            this.AddExistingSongButton.UseVisualStyleBackColor = true;
+            this.AddExistingSongButton.Click += new System.EventHandler(this.button9_Click);
             // 
             // label11
             // 
@@ -460,63 +460,63 @@ namespace zd2_3_karamov
             this.label11.TabIndex = 13;
             this.label11.Text = "Существующие песни";
             // 
-            // textBox3
+            // textBoxName
             // 
-            this.textBox3.Location = new System.Drawing.Point(243, 152);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PlaceholderText = "Название";
-            this.textBox3.Size = new System.Drawing.Size(131, 23);
-            this.textBox3.TabIndex = 9;
+            this.textBoxName.Location = new System.Drawing.Point(243, 152);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.PlaceholderText = "Название";
+            this.textBoxName.Size = new System.Drawing.Size(131, 23);
+            this.textBoxName.TabIndex = 9;
             // 
-            // comboBox2
+            // comboBoxSongs
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBoxSongs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSongs.FormattingEnabled = true;
+            this.comboBoxSongs.Items.AddRange(new object[] {
             "Песня1|song1.mp3|Антон",
             "Песня2|song2.mp3|Хамид"});
-            this.comboBox2.Location = new System.Drawing.Point(213, 63);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(183, 23);
-            this.comboBox2.TabIndex = 8;
+            this.comboBoxSongs.Location = new System.Drawing.Point(213, 63);
+            this.comboBoxSongs.Name = "comboBoxSongs";
+            this.comboBoxSongs.Size = new System.Drawing.Size(183, 23);
+            this.comboBoxSongs.TabIndex = 8;
             // 
-            // button8
+            // AddNewSongButton
             // 
-            this.button8.Location = new System.Drawing.Point(243, 257);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(131, 39);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "Добавить новую песню";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.AddNewSongButton.Location = new System.Drawing.Point(243, 257);
+            this.AddNewSongButton.Name = "AddNewSongButton";
+            this.AddNewSongButton.Size = new System.Drawing.Size(131, 39);
+            this.AddNewSongButton.TabIndex = 7;
+            this.AddNewSongButton.Text = "Добавить новую песню";
+            this.AddNewSongButton.UseVisualStyleBackColor = true;
+            this.AddNewSongButton.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button7
+            // NextButton
             // 
-            this.button7.Location = new System.Drawing.Point(592, 273);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(45, 23);
-            this.button7.TabIndex = 5;
-            this.button7.Text = ">>";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.NextButton.Location = new System.Drawing.Point(592, 273);
+            this.NextButton.Name = "NextButton";
+            this.NextButton.Size = new System.Drawing.Size(45, 23);
+            this.NextButton.TabIndex = 5;
+            this.NextButton.Text = ">>";
+            this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button1
+            // PreviousButton
             // 
-            this.button1.Location = new System.Drawing.Point(451, 273);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "<<";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.PreviousButton.Location = new System.Drawing.Point(451, 273);
+            this.PreviousButton.Name = "PreviousButton";
+            this.PreviousButton.Size = new System.Drawing.Size(45, 23);
+            this.PreviousButton.TabIndex = 4;
+            this.PreviousButton.Text = "<<";
+            this.PreviousButton.UseVisualStyleBackColor = true;
+            this.PreviousButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel3
+            // Picture
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel3.Location = new System.Drawing.Point(451, 94);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(186, 173);
-            this.panel3.TabIndex = 3;
+            this.Picture.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Picture.Location = new System.Drawing.Point(451, 94);
+            this.Picture.Name = "Picture";
+            this.Picture.Size = new System.Drawing.Size(186, 173);
+            this.Picture.TabIndex = 3;
             // 
             // label8
             // 
@@ -527,23 +527,23 @@ namespace zd2_3_karamov
             this.label8.TabIndex = 2;
             this.label8.Text = "Плейлист";
             // 
-            // listBox2
+            // listBoxSongs
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 15;
-            this.listBox2.Location = new System.Drawing.Point(19, 33);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(188, 394);
-            this.listBox2.TabIndex = 1;
+            this.listBoxSongs.FormattingEnabled = true;
+            this.listBoxSongs.ItemHeight = 15;
+            this.listBoxSongs.Location = new System.Drawing.Point(19, 33);
+            this.listBoxSongs.Name = "listBoxSongs";
+            this.listBoxSongs.Size = new System.Drawing.Size(188, 394);
+            this.listBoxSongs.TabIndex = 1;
             // 
-            // label7
+            // SongNameLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(509, 44);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 15);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Название песни";
+            this.SongNameLabel.AutoSize = true;
+            this.SongNameLabel.Location = new System.Drawing.Point(509, 44);
+            this.SongNameLabel.Name = "SongNameLabel";
+            this.SongNameLabel.Size = new System.Drawing.Size(95, 15);
+            this.SongNameLabel.TabIndex = 0;
+            this.SongNameLabel.Text = "Название песни";
             // 
             // Form1
             // 
@@ -591,28 +591,28 @@ namespace zd2_3_karamov
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button ClearPlaylistButton;
+        private System.Windows.Forms.Button RemoveSongButton;
+        private System.Windows.Forms.Button SelectSongButton;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown numericIndex;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button AddExistingSongButton;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.ComboBox comboBoxSongs;
+        private System.Windows.Forms.Button AddNewSongButton;
+        private System.Windows.Forms.Button NextButton;
+        private System.Windows.Forms.Button PreviousButton;
+        private System.Windows.Forms.Panel Picture;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.ListBox listBoxSongs;
+        private System.Windows.Forms.Label SongNameLabel;
+        private System.Windows.Forms.Label AuthorLabel;
+        private System.Windows.Forms.TextBox textBoxAuthor;
+        private System.Windows.Forms.TextBox textBoxFilename;
+        private System.Windows.Forms.Button RemoveCurrentSongButton;
+        private System.Windows.Forms.Label FileLabel;
+        private System.Windows.Forms.Button MoveToStartButton;
     }
 }
 

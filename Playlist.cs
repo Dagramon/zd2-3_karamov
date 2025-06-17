@@ -22,11 +22,11 @@ namespace zd2_3_karamov
             list = new List<Song>();
             currentIndex = 0;
         }
-        public List<Song> GetList()
+        public List<Song> GetList() //получить список песен
         {
             return list;
         }
-        public void MoveToPrevious()
+        public void MoveToPrevious() //переместиться на песню назад
         {
             if (currentIndex > 0)
             {
@@ -34,7 +34,7 @@ namespace zd2_3_karamov
             }
         }
 
-        public void MoveToNext()
+        public void MoveToNext() //переместиться на песню вперёд
         {
             if (currentIndex + 1 < list.Count)
             {
@@ -42,19 +42,19 @@ namespace zd2_3_karamov
             }
         }
 
-        public void ClearPlaylist()
+        public void ClearPlaylist() //очистка списка
         {
             list.Clear();
             currentIndex = 0;
         }
 
-        public void AddSong(Song song)
+        public void AddSong(Song song) //добавление новой песни
         {
             list.Add(song);
             currentIndex = list.IndexOf(song);
         }
 
-        public void AddSong(string title, string filename, string author)
+        public void AddSong(string title, string filename, string author) //перегрузка добавления новой песни
         {
             Song song = new Song();
             song.Title = title;
@@ -63,7 +63,7 @@ namespace zd2_3_karamov
             list.Add(song);
             currentIndex = list.IndexOf(song);
         }
-        public void RemoveSong(int index)
+        public void RemoveSong(int index) //удаление песни по индексу
         {
             if (list.Count > 0)
             {
@@ -71,7 +71,7 @@ namespace zd2_3_karamov
                 currentIndex = 0;
             }
         }
-        public void RemoveSong(Song song)
+        public void RemoveSong(Song song) //перегрузка удаления песни
         {
             if (list.Count > 0)
             {
