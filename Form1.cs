@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace zd2_3_karamov
         public Form1()
         {
             InitializeComponent();
+            LoadFromFile();
         }
 
         List<Shop> shops = new List<Shop>();
@@ -96,6 +98,39 @@ namespace zd2_3_karamov
         }
         //задание 3
 
+        public void SaveToFile()
+        {
+            using (StreamWriter sw = File.CreateText("Playlist.txt"))
+            {
+                foreach (Song song in playlist.GetList())
+                {
+                    sw.WriteLine($"{song.Title}|{song.Filename}|{song.Author}");
+                }
+            }
+        }
+
+        public void LoadFromFile()
+        {
+            if (File.Exists("Playlist.txt"))
+            {
+                string[] arr = File.ReadAllLines("Playlist.txt");
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    string[] info = arr[i].Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                    Song song = new Song();
+                    song.Title = info[0];
+                    song.Filename = info[1];
+                    song.Author = info[2];
+                    playlist.AddSong(song);
+                }
+                UpdatePlaylist();
+            }
+            else
+            {
+                MessageBox.Show("Файл не найден");
+            }
+        }
+
         public void UpdatePlaylist() //Добавление изменений в listBox
         {
             listBoxSongs.Items.Clear();
@@ -109,6 +144,7 @@ namespace zd2_3_karamov
             {
                 listBoxSongs.SelectedIndex = playlist.CurrentIndex;
             }
+            SaveToFile();
         }
 
         public void LoadSong() //Загрузка песни для отображения
